@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/rendering.dart';
@@ -77,11 +78,125 @@ class _DoctorProfileState extends State<DoctorProfile> {
                         SizedBox(
                           height: 20,
                         ),
-                        Text(
-                          document['name'],
-                          style: GoogleFonts.lato(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 24,
+                        GestureDetector(
+                          onTap: ()async{
+                            try {
+                              // Initialize Firebase (if not already initialized)
+                              await Firebase.initializeApp();
+
+                              // Reference to the Firestore database
+                              FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+                              // Reference to the "doctors" collection
+                              CollectionReference doctorsCollection = firestore.collection('doctors');
+
+                              // Add each JSON object in the list to the "doctors" collection
+                              [
+                                {
+                                  "address": "123, Main Street, Kolkata, West Bengal, India",
+                                  "closeHour": "4:30 PM",
+                                  "image": "https://example.com/doctor1.jpg",
+                                  "name": "Dr. Rajesh Sharma",
+                                  "openHour": "9:00 AM",
+                                  "phone": "+91 12345 67890",
+                                  "rating": 4.5,
+                                  "specification": "Cardiologist",
+                                  "type": "Cardiologist"
+                                },
+                                {
+                                  "address": "456, Park Avenue, Mumbai, Maharashtra, India",
+                                  "closeHour": "5:15 PM",
+                                  "image": "https://example.com/doctor2.jpg",
+                                  "name": "Dr. Priya Patel",
+                                  "openHour": "8:30 AM",
+                                  "phone": "+91 98765 43210",
+                                  "rating": 4.2,
+                                  "specification": "Dentist",
+                                  "type": "Dentist"
+                                },
+                                {
+                                  "address": "789, Lake Road, Delhi, India",
+                                  "closeHour": "3:45 PM",
+                                  "image": "https://example.com/doctor3.jpg",
+                                  "name": "Dr. Sanjay Kumar",
+                                  "openHour": "10:00 AM",
+                                  "phone": "+91 87654 32109",
+                                  "rating": 4.8,
+                                  "specification": "Eye Specialist",
+                                  "type": "Eye Specialist"
+                                },
+                                {
+                                  "address": "567, Green Street, Bangalore, Karnataka, India",
+                                  "closeHour": "2:30 PM",
+                                  "image": "https://example.com/doctor4.jpg",
+                                  "name": "Dr. Meera Reddy",
+                                  "openHour": "8:45 AM",
+                                  "phone": "+91 23456 78901",
+                                  "rating": 4.1,
+                                  "specification": "Orthopaedic",
+                                  "type": "Orthopaedic"
+                                },
+                                {
+                                  "address": "321, Maple Lane, Chennai, Tamil Nadu, India",
+                                  "closeHour": "1:15 PM",
+                                  "image": "https://example.com/doctor5.jpg",
+                                  "name": "Dr. Aarav Gupta",
+                                  "openHour": "10:30 AM",
+                                  "phone": "+91 76543 21098",
+                                  "rating": 4.9,
+                                  "specification": "Paediatrician",
+                                  "type": "Paediatrician"
+                                },
+                                {
+                                  "address": "234, Oak Street, Hyderabad, Telangana, India",
+                                  "closeHour": "5:00 PM",
+                                  "image": "https://example.com/doctor6.jpg",
+                                  "name": "Dr. Kavya Singh",
+                                  "openHour": "9:15 AM",
+                                  "phone": "+91 34567 89012",
+                                  "rating": 4.3,
+                                  "specification": "Cardiologist",
+                                  "type": "Cardiologist"
+                                },
+                                {
+                                  "address": "678, Pine Road, Pune, Maharashtra, India",
+                                  "closeHour": "3:00 PM",
+                                  "image": "https://example.com/doctor7.jpg",
+                                  "name": "Dr. Siddharth Joshi",
+                                  "openHour": "8:15 AM",
+                                  "phone": "+91 87654 32109",
+                                  "rating": 4.6,
+                                  "specification": "Dentist",
+                                  "type": "Dentist"
+                                },
+                                {
+                                  "address": "890, Elm Street, Jaipur, Rajasthan, India",
+                                  "closeHour": "4:00 PM",
+                                  "image": "https://example.com/doctor8.jpg",
+                                  "name": "Dr. Ananya Khanna",
+                                  "openHour": "10:15 AM",
+                                  "phone": "+91 98765 43210",
+                                  "rating": 4.7,
+                                  "specification": "Orthopaedic",
+                                  "type": "Orthopaedic"
+                                }
+                              ]
+                                  .forEach((doctor) async {
+                                await doctorsCollection.add(doctor);
+                              });
+
+                              print('Doctors added successfully.');
+
+                            } catch (e) {
+                              print('Error adding doctors: $e');
+                            }
+                          },
+                          child: Text(
+                            document['name'],
+                            style: GoogleFonts.lato(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24,
+                            ),
                           ),
                         ),
                         SizedBox(

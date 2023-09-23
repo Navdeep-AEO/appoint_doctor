@@ -48,11 +48,11 @@ class _DiseaseDetailState extends State<DiseaseDetail> {
                         ),
                         Container(
                             margin: const EdgeInsets.only(left: 15, right: 15),
-                            padding: const EdgeInsets.only(left: 20, right: 20),
+                            padding: const EdgeInsets.all(20),
                             alignment: Alignment.centerLeft,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              color: Colors.blueGrey[50],
+                              color: Colors.red.withOpacity(0.4),
                             ),
                             child: Text(
                               document['Description'],
@@ -64,7 +64,7 @@ class _DiseaseDetailState extends State<DiseaseDetail> {
                         ),
                         Container(
                             margin: const EdgeInsets.only(left: 15, right: 15),
-                            padding: const EdgeInsets.only(left: 20, right: 20),
+                            padding: const EdgeInsets.all(20),
                             alignment: Alignment.centerLeft,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -98,7 +98,7 @@ class _DiseaseDetailState extends State<DiseaseDetail> {
                         ),
                         Container(
                             margin: const EdgeInsets.only(left: 15, right: 15),
-                            padding: const EdgeInsets.only(left: 20, right: 20),
+                            padding: const EdgeInsets.all(20),
                             alignment: Alignment.centerLeft,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -132,7 +132,7 @@ class _DiseaseDetailState extends State<DiseaseDetail> {
                         ),
                         Container(
                             margin: const EdgeInsets.only(left: 15, right: 15),
-                            padding: const EdgeInsets.only(left: 20, right: 20),
+                            padding: const EdgeInsets.all(20),
                             alignment: Alignment.centerLeft,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),

@@ -83,6 +83,9 @@ class _ExploreListState extends State<ExploreList> {
                             CircleAvatar(
                               backgroundColor: Colors.blue,
                               radius: 25,
+                              backgroundImage: NetworkImage(
+                                  doctor['image']
+                              ),
                             ),
                             SizedBox(
                               width: 20,

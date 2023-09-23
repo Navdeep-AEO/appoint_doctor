@@ -65,7 +65,7 @@ class _UserProfileState extends State<UserProfile> {
                           alignment: Alignment.topRight,
                           child: IconButton(
                             icon: Icon(
-                              Icons.abc,
+                              Icons.edit,
                               color: Colors.white,
                               size: 20,
                             ),

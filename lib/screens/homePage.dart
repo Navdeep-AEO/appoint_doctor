@@ -72,35 +72,17 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         title: Container(
           padding: EdgeInsets.only(top: 5),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Container(
-                //width: MediaQuery.of(context).size.width/1.3,
-                alignment: Alignment.center,
-                child: Text(
-                  "${_message}",
-                  style: GoogleFonts.lato(
-                    color: Colors.black54,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
+          child: Container(
+            //width: MediaQuery.of(context).size.width/1.3,
+            alignment: Alignment.center,
+            child: Text(
+              "${_message}",
+              style: GoogleFonts.lato(
+                color: Colors.black54,
+                fontSize: 20,
+                fontWeight: FontWeight.w400,
               ),
-              SizedBox(
-                width: 55,
-              ),
-              IconButton(
-                splashRadius: 20,
-                icon: Icon(Icons.notifications_active),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (contex) => NotificationList()));
-                },
-              ),
-            ],
+            ),
           ),
         ),
         iconTheme: IconThemeData(
